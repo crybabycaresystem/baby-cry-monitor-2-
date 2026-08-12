@@ -1,0 +1,12 @@
+{
+  "name": "baby-cry-ai-relay",
+  "version": "1.0.0",
+  "description": "Baby Cry AI ESP32 Relay Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
