@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#eef3f8"
+    >
+
+    <title>
+        Baby Cry AI Monitoring System
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        👶 Baby Cry AI Monitoring System
+    </h1>
+
+    <p class="subtitle">
+        Real-Time Baby Cry Detection using
+        Edge Impulse AI & ESP32
+    </p>
+
+
+    <!-- ================================= -->
+    <!-- CONNECTION -->
+    <!-- ================================= -->
+
+    <div
+        id="connection"
+        class="connection offline"
+    >
+        🔴 Connecting to monitoring system...
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- STATUS -->
+    <!-- ================================= -->
+
+    <div class="card">
+
+        <h2>
+            Current Baby Status
+        </h2>
+
+        <div
+            id="statusBox"
+            class="status green"
+        >
+            NO CRY
+        </div>
+
+        <div class="confidence">
+
+            Confidence:
+            
+            <span id="confidence">
+                0.0%
+            </span>
+
+        </div>
+
+        <div class="update">
+
+            Last Updated:
+
+            <span id="lastUpdate">
+                --
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- RECOMMENDATION -->
+    <!-- ================================= -->
+
+    <div class="card">
+
+        <h2>
+            🤖 AI Recommendation
+        </h2>
+
+        <div
+            id="autoAdvice"
+            class="adviceBox"
+        >
+
+            <h3>
+                😊 Current Status: NO CRY
+            </h3>
+
+            <p>
+                Waiting for the latest ESP32
+                detection.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- THINGSPEAK GRAPHS -->
+    <!-- ================================= -->
+
+    <div class="graphContainer">
+
+
+        <div class="card">
+
+            <h2>
+                🍼 Hunger Confidence
+            </h2>
+
+            <iframe
+                src="https://thingspeak.com/channels/3414669/charts/1?bgcolor=%23ffffff&color=%230066ff&dynamic=true&type=line&results=20"
+                loading="lazy"
+            >
+            </iframe>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                🚨 Distress Confidence
+            </h2>
+
+            <iframe
+                src="https://thingspeak.com/channels/3414669/charts/2?bgcolor=%23ffffff&color=%23ff0000&dynamic=true&type=line&results=20"
+                loading="lazy"
+            >
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- CHATBOT -->
+    <!-- ================================= -->
+
+    <div class="card">
+
+        <h2>
+            💬 Baby Care Assistant
+        </h2>
+
+        <div
+            id="chatBox"
+            class="chatBox"
+        >
+
+            <div class="aiBubble">
+
+                👋 Hello! I'm your
+                <b>Baby Care Assistant</b>.
+
+                <br><br>
+
+                I can help with:
+
+                <br><br>
+
+                • Baby crying
+                <br>
+                • Hunger
+                <br>
+                • Distress
+                <br>
+                • Feeding
+                <br>
+                • Sleeping
+                <br>
+                • Diapers
+                <br>
+                • Newborn care
+
+            </div>
+
+        </div>
+
+
+        <div class="chatInput">
+
+            <input
+                id="question"
+                type="text"
+                placeholder="Ask me about baby care..."
+            >
+
+            <button
+                onclick="sendQuestion()"
+            >
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
